@@ -1,0 +1,27 @@
+/* Palette and font family observed at partprecision.se/sv/ on 2026-10-16.
+   Spacing and component sizes below are project adaptations. Font files are not bundled. */
+:root {
+  --pp-green: #004B45;
+  --pp-mint: #76C1A0;
+  --pp-white: #FFFFFF;
+  --pp-neutral: #F0F2F1;
+  --pp-grey-green: #CBD6D6;
+  --pp-grey: #707070;
+  --pp-red: #E02128;
+  --pp-dark-red: #70150F;
+  --pp-font: 'Poppins', Arial, Helvetica, sans-serif;
+  --pp-heading-weight: 300;
+  --pp-body-weight: 400;
+  --pp-space-unit: 8px;
+}
+.pp-heading { font-family: var(--pp-font); font-weight: var(--pp-heading-weight); line-height: 1.2; }
+.pp-body { font-family: var(--pp-font); font-weight: var(--pp-body-weight); line-height: 1.7; }
+/* Slanted outline references the website's SVG buttons. This CSS implementation is adapted. */
+.pp-action {
+  display: inline-flex; padding: 14px 28px; border: 1px solid currentColor;
+  color: var(--pp-green); background: transparent; transform: skewX(-20deg);
+  font: 400 15px var(--pp-font); letter-spacing: .12em; text-decoration: none;
+}
+.pp-action > span { transform: skewX(20deg); }
+.pp-action:hover, .pp-action:focus-visible { color: var(--pp-green); background: var(--pp-mint); }
+.pp-action:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
