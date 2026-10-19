@@ -1,0 +1,12 @@
+FÖRBERETT MATERIAL – ÄNNU INTE PUBLICERAT
+
+Landningssidan läggs upp på befintlig webbplats. Använd webbplatsens egna Poppins-typsnitt och komponenter.
+
+1. Ladda upp broschyr-digital.pdf i mediebiblioteket.
+2. Skapa en ny sida och lägg in rubrik, ingress och text från landningssida-text.txt.
+3. Skapa knappen ”Läs broschyren” med länken till den uppladdade PDF-filen.
+4. Använd bilder/foto-produktion.jpg som artikelbild. Förslag på alt-text: ”Medarbetare vid en maskin i Part Precisions produktionsmiljö”.
+5. Kontrollera mobilvisning, PDF-länk och kontaktuppgifter före publicering.
+6. Länka till landningssidan från LinkedIn-inlägget och från mejl.
+
+landningssida.html visar hur sidan ser ut i webbplatsens stil. Dess relativa länkar ska ersättas med publicerade medieadresser i webbplatsen.

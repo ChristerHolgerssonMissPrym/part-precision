@@ -1,1 +1,754 @@
-<!doctype html><html lang="sv"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Part Precision – kunddemo</title><meta name="robots" content="noindex,nofollow"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="typography.css"><style>html{scroll-behavior:smooth}body{margin:0;background:#f0f2f1;color:#004b45;font-family:var(--pp-font)}header{background:#004b45;padding:30px 8%}header img{width:230px}main{max-width:1000px;margin:45px auto;padding:0 24px}h1{font-size:42px;font-weight:500}h2{font-size:24px;font-weight:500}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}article{padding:26px;background:white}a{color:#004b45;line-height:2}p{line-height:1.6}.note{border-left:4px solid #76c1a0;padding-left:16px}small{color:#707070}</style><header><img src="logo-horizontal-light.png" alt="Part Precision"></header><main><h1>Part Precision · kunddemo</h1><p>Material för nya kunder inom precisionsmekanik och medicinteknik.</p><p><a href="broschyr-digital.pdf">Öppna broschyren</a> &nbsp; · &nbsp; <a href="Part_Precision_demopaket.zip">Ladda ner demopaketet</a></p><div class="grid"><article><h2>Fysisk och digital broschyr</h2><a href="broschyr-utskrift.pdf">Broschyr för utskrift · PDF</a><br><a href="broschyr-digital.pdf">Digital broschyr med klickbara länkar · PDF</a><br><a href="broschyr-redigerbar.docx">Redigerbar broschyr · Word</a><br><a href="om-utskrift-och-tryck.txt">Format och förutsättningar för tryck</a></article><article><h2>Hemsida</h2><a href="webbpreview.html">Förhandsvisa webbmaterialet</a><br><a href="webbtext.txt">Text för hemsidan</a><br><a href="hemsida-publicering.txt">Anvisning för publicering</a></article><article><h2>LinkedIn</h2><a href="linkedin-text.txt">Inläggstext</a><br><a href="linkedin-bild.png">Bild för LinkedIn</a><br><a href="linkedin-publicering.txt">Anvisning för dokument- eller bildinlägg</a></article><article><h2>Visuell identitet</h2><a href="designprofil.md">Designprofil från hemsidan</a><br><a href="tokens.css">Färger och typografi</a><br><p><small>Den nya designprofilen dokumenterar hemsidans lättare Poppins-rubriker. Tidigare Word-utkast är formatanpassningar.</small></p></article></div><p class="note">Status: innehållet är framtaget för granskning. Publicering på hemsidan och LinkedIn återstår. Utskriftsfilen har fyra A4-sidor; slutliga tryckinställningar och originalupplösning behöver stämmas av med tryckeriet.</p><small>Källor: Part Precisions webbplats och underlaget i projektet. Design observerad 16 oktober 2026.</small></main></html>
+<!doctype html>
+<html lang="sv">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Förslag till Part Precision – designsystem och material för nya kunder</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kalla/tokens.css">
+<style>
+    /* Layout and type follow partprecision.se/sv/ (same patterns as webbpreview.html). */
+    * {
+        box-sizing: border-box
+    }
+
+    html {
+        scroll-behavior: smooth
+    }
+
+    body {
+        margin: 0;
+        font-family: var(--pp-font);
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--pp-grey);
+        background: #fff
+    }
+
+    h1, h2, h3, p {
+        margin: 0
+    }
+
+    a {
+        color: var(--pp-green)
+    }
+
+    img {
+        display: block;
+        max-width: 100%
+    }
+
+    /* ---------- Hero with transparent header ---------- */
+    .hero {
+        min-height: 440px;
+        padding: 25px 80px 56px;
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        background:
+            linear-gradient(rgba(0, 75, 69, .9) 10%, rgba(0, 75, 69, .6) 100%),
+            url("bilder/foto-samarbete.jpg") center 40% / cover no-repeat var(--pp-green)
+    }
+
+    .site-header {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: start
+    }
+
+    .site-header ul {
+        list-style: none;
+        margin: 0;
+        padding: 10px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 34px;
+        font-size: 16px
+    }
+
+    .site-header nav.right ul {
+        justify-content: flex-end;
+        padding-top: 22px
+    }
+
+    .site-header nav a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 32px;
+        transition: color .2s
+    }
+
+    .site-header nav a:hover,
+    .site-header nav a:focus-visible {
+        color: var(--pp-mint)
+    }
+
+    .site-header .logo img {
+        height: 100px;
+        width: auto
+    }
+
+    .hero .title {
+        margin: auto 0 0;
+        max-width: 780px
+    }
+
+    .eyebrow {
+        font-size: 15px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--pp-mint);
+        margin-bottom: 14px
+    }
+
+    .hero h1 {
+        font-size: 54px;
+        line-height: 1.15;
+        font-weight: 300;
+        color: #fff
+    }
+
+    .hero .lead {
+        margin-top: 18px;
+        font-size: 18px;
+        line-height: 1.7;
+        max-width: 620px
+    }
+
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 28px
+    }
+
+    /* Outline button with slanted right edge, after the site's SVG buttons. */
+    .pp-button {
+        --edge: var(--pp-green);
+        --fill: #fff;
+        --text: var(--pp-green);
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        height: 50px;
+        padding: 0 44px 0 23px;
+        font-size: 15px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--text);
+        background: var(--edge);
+        clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%);
+        transition: color .2s
+    }
+
+    .pp-button::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: var(--fill);
+        clip-path: polygon(0 0, calc(100% - .5px) 0, calc(100% - 19.7px) 100%, 0 100%);
+        transition: background .2s
+    }
+
+    .pp-button span {
+        position: relative
+    }
+
+    .pp-button:hover,
+    .pp-button:focus-visible {
+        --fill: var(--pp-mint);
+        --text: var(--pp-green);
+        outline: none
+    }
+
+    .hero .pp-button,
+    .alt .pp-button {
+        --fill: var(--pp-neutral)
+    }
+
+    .hero .pp-button {
+        --edge: #fff;
+        --fill: rgba(0, 75, 69, .55);
+        --text: #fff
+    }
+
+    .hero .pp-button:hover,
+    .hero .pp-button:focus-visible,
+    .alt .pp-button:hover,
+    .alt .pp-button:focus-visible {
+        --fill: var(--pp-mint);
+        --text: var(--pp-green)
+    }
+
+    /* ---------- Sections ---------- */
+    .section {
+        padding: 90px 30px;
+        scroll-margin-top: 0
+    }
+
+    .alt {
+        background: var(--pp-neutral)
+    }
+
+    .inner {
+        max-width: 1200px;
+        margin: 0 auto
+    }
+
+    .intro {
+        padding-top: 64px;
+        padding-bottom: 20px;
+        text-align: center
+    }
+
+    .intro h2,
+    .section h2 {
+        font-size: 36px;
+        line-height: 1.2;
+        font-weight: 300;
+        color: var(--pp-green)
+    }
+
+    .intro p {
+        max-width: 680px;
+        margin: 14px auto 0;
+        font-size: 18px;
+        color: var(--pp-green)
+    }
+
+    /* Deliverable: preview on one side, description on the other */
+    .deliverable .inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center
+    }
+
+    .deliverable.flip .preview {
+        order: 2
+    }
+
+    .preview {
+        display: flex;
+        justify-content: center
+    }
+
+    .preview img {
+        box-shadow: 0 18px 40px rgba(0, 40, 36, .18)
+    }
+
+    .preview.brochure {
+        background: var(--pp-neutral);
+        padding: 44px 0
+    }
+
+    .preview.brochure img {
+        width: 62%
+    }
+
+    .preview.social img {
+        width: 78%
+    }
+
+    .deliverable .label {
+        font-size: 15px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--pp-mint);
+        margin-bottom: 10px
+    }
+
+    .deliverable .desc {
+        margin: 16px 0 24px;
+        font-size: 16px
+    }
+
+    .deliverable h3 {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--pp-green);
+        margin-bottom: 6px
+    }
+
+    .included {
+        list-style: none;
+        margin: 0 0 30px;
+        padding: 0
+    }
+
+    .included li {
+        padding: 10px 0;
+        border-top: 1px solid var(--pp-grey-green);
+        color: #232323
+    }
+
+    .included li:last-child {
+        border-bottom: 1px solid var(--pp-grey-green)
+    }
+
+    .quote {
+        margin: 0 0 30px;
+        padding: 4px 0 4px 18px;
+        border-left: 1px solid var(--pp-mint);
+        color: var(--pp-green);
+        font-style: italic
+    }
+
+    /* Design system preview: colours, type and a component, drawn live from the tokens */
+    .preview.system {
+        display: block;
+        background: #fff;
+        padding: 34px;
+        box-shadow: 0 18px 40px rgba(0, 40, 36, .12)
+    }
+
+    .system .part + .part {
+        margin-top: 26px;
+        padding-top: 22px;
+        border-top: 1px solid var(--pp-grey-green)
+    }
+
+    .system .part-title {
+        font-size: 12px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--pp-grey);
+        margin-bottom: 12px
+    }
+
+    .swatches {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0
+    }
+
+    .swatches li {
+        font-size: 11px;
+        line-height: 1.4;
+        color: var(--pp-grey)
+    }
+
+    .swatches span {
+        display: block;
+        height: 44px;
+        margin-bottom: 6px;
+        border: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    .type-scale {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 4px 22px;
+        align-items: baseline
+    }
+
+    .type-scale .aa {
+        grid-row: span 2;
+        font-size: 64px;
+        font-weight: 300;
+        line-height: 1;
+        color: var(--pp-green)
+    }
+
+    .type-scale .sample-h {
+        font-size: 22px;
+        font-weight: 300;
+        color: var(--pp-green)
+    }
+
+    .type-scale small {
+        font-size: 12px;
+        color: var(--pp-grey)
+    }
+
+    .components {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 18px
+    }
+
+    .components .chip {
+        font-size: 13px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--pp-mint)
+    }
+
+    .components .pp-button {
+        --fill: #fff;
+        pointer-events: none
+    }
+
+    /* ---------- Profile band ---------- */
+    .profile {
+        background: var(--pp-green);
+        color: #fff
+    }
+
+    .profile h2 {
+        color: #fff;
+        margin-bottom: 40px
+    }
+
+    .points {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        list-style: none;
+        margin: 0;
+        padding: 0
+    }
+
+    .points li {
+        border-left: 1px solid var(--pp-mint);
+        padding-left: 20px
+    }
+
+    .points strong {
+        display: block;
+        font-weight: 400;
+        font-size: 18px;
+        color: var(--pp-mint);
+        margin-bottom: 6px
+    }
+
+    /* ---------- Next steps ---------- */
+    .steps {
+        counter-reset: step;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        list-style: none;
+        margin: 40px 0 0;
+        padding: 0
+    }
+
+    .steps li {
+        counter-increment: step;
+        background: #fff;
+        padding: 34px 34px 30px
+    }
+
+    .steps li::before {
+        content: counter(step);
+        display: block;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 1;
+        color: var(--pp-mint);
+        margin-bottom: 16px
+    }
+
+    .steps strong {
+        display: block;
+        font-weight: 400;
+        font-size: 20px;
+        color: var(--pp-green);
+        margin-bottom: 6px
+    }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+        background: var(--pp-green);
+        color: #fff;
+        padding: 40px 83px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px
+    }
+
+    .site-footer img {
+        height: 56px;
+        width: auto
+    }
+
+    .site-footer p {
+        color: var(--pp-grey-green);
+        text-align: right
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1000px) {
+        .hero {
+            padding: 20px 24px 44px;
+            min-height: 0
+        }
+
+        .site-header {
+            grid-template-columns: 1fr
+        }
+
+        .site-header nav {
+            display: none
+        }
+
+        .site-header .logo img {
+            height: 72px
+        }
+
+        .hero .title {
+            margin-top: 40px
+        }
+
+        .hero h1 {
+            font-size: 42px
+        }
+
+        .deliverable .inner,
+        .points,
+        .steps {
+            grid-template-columns: 1fr
+        }
+
+        .deliverable .inner {
+            gap: 36px
+        }
+
+        .deliverable.flip .preview {
+            order: 0
+        }
+
+        .site-footer {
+            padding: 32px 24px;
+            flex-direction: column;
+            align-items: flex-start
+        }
+
+        .site-footer p {
+            text-align: left
+        }
+    }
+
+    @media (max-width: 560px) {
+        .hero {
+            padding: 16px 16px 40px
+        }
+
+        .hero h1 {
+            font-size: 34px
+        }
+
+        .hero .lead,
+        .intro p {
+            font-size: 16px
+        }
+
+        .section {
+            padding: 60px 16px
+        }
+
+        .intro {
+            padding-top: 48px;
+            padding-bottom: 0
+        }
+
+        .intro h2,
+        .section h2 {
+            font-size: 28px
+        }
+
+        .preview.brochure {
+            padding: 28px 0
+        }
+
+        .steps li {
+            padding: 26px 22px
+        }
+    }
+</style>
+
+<div class="hero">
+    <header class="site-header">
+        <nav class="left" aria-label="Innehåll">
+            <ul>
+                <li><a href="#designsystem">Designsystem</a></li>
+                <li><a href="#broschyr">Broschyr</a></li>
+                <li><a href="#landningssida">Landningssida</a></li>
+            </ul>
+        </nav>
+        <a class="logo" href="#"><img src="bilder/logo-symbol.png" alt="Part Precision"></a>
+        <nav class="right" aria-label="Mer innehåll">
+            <ul>
+                <li><a href="#linkedin">LinkedIn</a></li>
+                <li><a href="#nasta-steg">Nästa steg</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="title">
+        <p class="eyebrow">Förslag till Part Precision</p>
+        <h1>Ett enhetligt varumärke som når nya kunder</h1>
+        <p class="lead">Vi bygger ett designsystem utifrån Part Precisions varumärke – och använder det för att ta fram
+            broschyrer, landningssidor och LinkedIn-inlägg som presenterar er för nya kunder inom precisionsmekanik och
+            medicinteknik.</p>
+        <div class="actions">
+            <a class="pp-button" href="#ingar"><span>Se vad som ingår</span></a>
+            <a class="pp-button" target="_blank" href="material/broschyr-digital.pdf"><span>Se broschyren</span></a>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section class="section intro" id="ingar">
+        <div class="inner">
+            <h2>Det här ingår</h2>
+            <p>Fyra delar som hänger ihop: designsystemet ger allt ett gemensamt utseende, broschyrer berättar vilka ni är,
+                landningssidor och LinkedIn-inlägg ser till att budskapet når rätt mottagare. Nedan visar vi ett exempel
+                på varje.</p>
+        </div>
+    </section>
+
+    <section class="section deliverable flip alt" id="designsystem">
+        <div class="inner">
+            <div class="preview system" aria-label="Utdrag ur designsystemet">
+                <div class="part">
+                    <p class="part-title">Färger</p>
+                    <ul class="swatches">
+                        <li><span style="background:#004B45"></span>Mörkgrön<br>#004B45</li>
+                        <li><span style="background:#76C1A0"></span>Mintgrön<br>#76C1A0</li>
+                        <li><span style="background:#F0F2F1"></span>Ljus neutral<br>#F0F2F1</li>
+                        <li><span style="background:#CBD6D6"></span>Grågrön<br>#CBD6D6</li>
+                        <li><span style="background:#FFFFFF"></span>Vit<br>#FFFFFF</li>
+                        <li><span style="background:#707070"></span>Grå<br>#707070</li>
+                        <li><span style="background:#E02128"></span>Röd<br>#E02128</li>
+                        <li><span style="background:#70150F"></span>Mörkröd<br>#70150F</li>
+                    </ul>
+                </div>
+                <div class="part">
+                    <p class="part-title">Typografi</p>
+                    <div class="type-scale">
+                        <span class="aa">Aa</span>
+                        <span class="sample-h">Poppins Light för rubriker</span>
+                        <small>Poppins Regular för brödtext · Medium för etiketter</small>
+                    </div>
+                </div>
+                <div class="part">
+                    <p class="part-title">Komponenter</p>
+                    <div class="components">
+                        <span class="pp-button" aria-hidden="true"><span>Kontakt</span></span>
+                        <span class="chip">Etikett</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="label">Designsystem</p>
+                <h2>Ett designsystem byggt på ert varumärke</h2>
+                <p class="desc">Vi samlar färger, typsnitt och komponenter från partprecision.se i ett gemensamt
+                    designsystem. Det är grunden för allt material i förslaget – och för det ni tar fram framöver, i tryck
+                    och digitalt.</p>
+                <h3>Ingår</h3>
+                <ul class="included">
+                    <li>Färgpalett med åtta färger från er webbplats</li>
+                    <li>Typografi i Poppins med rubrik- och brödtextnivåer</li>
+                    <li>Komponenter som knappar, etiketter, kort och färgband</li>
+                    <li>Färdiga designvariabler för webben</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section deliverable" id="broschyr">
+        <div class="inner">
+            <div class="preview brochure">
+                <img src="bilder/forslag-broschyr.jpg" alt="Broschyrens omslag: Precisionskomponenter för medicinteknik och industri">
+            </div>
+            <div>
+                <p class="label">Broschyr</p>
+                <h2>En broschyr som säljer er tillverkning</h2>
+                <p class="desc">Fyra A4-sidor som presenterar tillverkningen, affärsområdena och certifieringarna – med en
+                    namngiven kontaktperson som nästa steg för nya kunder.</p>
+                <h3>Ingår</h3>
+                <ul class="included">
+                    <li>Digital PDF med klickbara länkar för mejl, hemsida och LinkedIn</li>
+                    <li>Tryckfärdigt original med utfall och skärmärken</li>
+                    <li>Redigerbar Word-version för egna uppdateringar</li>
+                </ul>
+                <a class="pp-button" target="_blank" href="material/broschyr-digital.pdf"><span>Se broschyren</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section deliverable flip alt" id="landningssida">
+        <div class="inner">
+            <div class="preview">
+                <img src="bilder/forslag-landningssida.jpg" alt="Förhandsvisning av broschyrsidan i partprecision.se:s utseende">
+            </div>
+            <div>
+                <p class="label">Landningssida</p>
+                <h2>En landningssida på partprecision.se</h2>
+                <p class="desc">En landningssida dit inlägg, mejl och annonser kan länka. Den presenterar broschyren och
+                    leder besökaren vidare till kontakt – byggd med webbplatsens egna rubriker, färger och knappar.</p>
+                <h3>Ingår</h3>
+                <ul class="included">
+                    <li>Text för landningssidan</li>
+                    <li>Layout i webbplatsens befintliga stil</li>
+                    <li>Anvisning för publicering på er webbplats</li>
+                </ul>
+                <a class="pp-button" target="_blank" href="material/landningssida.html"><span>Se landningssidan</span></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section deliverable" id="linkedin">
+        <div class="inner">
+            <div class="preview social">
+                <img src="bilder/linkedin-bild.jpg" alt="LinkedIn-bild: Looking for a manufacturing partner in precision mechanics or medical technology?">
+            </div>
+            <div>
+                <p class="label">LinkedIn</p>
+                <h2>Ett inlägg som sprider broschyren</h2>
+                <p class="desc">Broschyren publiceras som ett bläddringsbart dokument i flödet, så att kunder och nätverk
+                    kan läsa den direkt i LinkedIn.</p>
+                <p class="quote">”Söker ni en tillverkningspartner inom precisionsmekanik eller medicinteknik?”</p>
+                <h3>Ingår</h3>
+                <ul class="included">
+                    <li>Inläggstext med hashtaggar</li>
+                    <li>Kvadratisk bild för flödet, 1200 × 1200 px</li>
+                    <li>Anvisning för dokument- eller bildinlägg</li>
+                </ul>
+                <a class="pp-button" target="_blank" href="bilder/linkedin-bild.jpg"><span>Se bilden</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section profile">
+        <div class="inner">
+            <h2>Byggt på er egen profil</h2>
+            <ul class="points">
+                <li><strong>Era färger och typsnitt</strong>Mörkgrönt, mintgrönt och Poppins – hämtade direkt från
+                    partprecision.se.</li>
+                <li><strong>Era bilder och logotyp</strong>Foton från er egen produktion och era lokaler, i högsta
+                    tillgängliga upplösning.</li>
+                <li><strong>Fakta från er webbplats</strong>ISO 13485, FDA-registrering, renrum klass 8 och era
+                    affärsområden – inget påhittat.</li>
+            </ul>
+        </div>
+    </section> -->
+
+    <!-- <section class="section alt" id="nasta-steg">
+        <div class="inner">
+            <h2>Nästa steg</h2>
+            <ol class="steps">
+                <li><strong>Granskning</strong>Ni går igenom materialet och lämnar synpunkter på text och bild.</li>
+                <li><strong>Komplettering</strong>Vi justerar och lägger till det som gör materialet starkare, till exempel
+                    toleranser, maskinpark och kundexempel.</li>
+                <li><strong>Publicering och tryck</strong>Landningssidan publiceras på partprecision.se och
+                    inlägget på LinkedIn, och tryckoriginalet stäms av med ert tryckeri.</li>
+            </ol>
+        </div>
+    </section> -->
+</main>
+
+<footer class="site-footer">
+    <img src="bilder/logo-liggande.png" alt="Part Precision">
+    <p>Förslag till Part Precision Sweden AB · oktober 2026</p>
+</footer>
+
+</html>

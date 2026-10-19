@@ -1,9 +1,0 @@
-FYSISK BROSCHYR
-
-Broschyr_utskrift_A4.pdf innehåller fyra A4-sidor i läsordning och kan skrivas ut dubbelsidigt. För ett vikt häfte i A4 används A3-papper och häftesutskrift. Låt tryckeriet sköta utskjutningen.
-
-Detta är ett utskrifts- och granskningsunderlag, inte ett tryckeriavstämt original med utfall, skärmärken eller bestämd färgprofil. Innan upplaga beställs: stäm av format, papper, upplaga, färgprofil och bild-/logotypupplösning med tryckeriet. Webbplatsens sparade logotyp är rasterbaserad; vektororiginal behövs för bästa tryckkvalitet.
-
-DIGITAL BROSCHYR
-
-Broschyr_digital.pdf har klickbara webb- och e-postlänkar. Den passar som nedladdning på hemsidan, bilaga i mejl och dokumentinlägg på LinkedIn.

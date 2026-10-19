@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="sv">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Broschyr - Part Precision Sweden AB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kalla/tokens.css">
+<style>
+    /* Layout and type values mirror partprecision.se/sv/ subpages (Avada theme), observed 2026-10-19. */
+    * {
+        box-sizing: border-box
+    }
+
+    body {
+        margin: 0;
+        font-family: var(--pp-font);
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--pp-grey);
+        background: var(--pp-neutral)
+    }
+
+    h1, h2, h3 {
+        letter-spacing: normal;
+        margin: 0
+    }
+
+    a {
+        color: var(--pp-green)
+    }
+
+    img {
+        display: block;
+        max-width: 100%
+    }
+
+    .skip {
+        position: absolute;
+        left: -9999px
+    }
+
+    .skip:focus {
+        left: 16px;
+        top: 16px;
+        z-index: 10;
+        background: #fff;
+        padding: 8px 14px
+    }
+
+    /* ---------- Hero with transparent header ---------- */
+    .hero {
+        position: relative;
+        min-height: 605px;
+        padding: 25px 80px 0;
+        display: flex;
+        flex-direction: column;
+        background:
+            linear-gradient(rgba(0, 0, 0, .53) 17%, rgba(0, 0, 0, 0) 41%),
+            linear-gradient(rgba(0, 75, 69, .35), rgba(0, 75, 69, .55)),
+            url("../bilder/foto-byggnad.jpg") center / cover no-repeat;
+        color: #fff
+    }
+
+    .site-header {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: start
+    }
+
+    .site-header nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 34px;
+        font-size: 16px
+    }
+
+    .site-header nav.right ul {
+        justify-content: flex-end;
+        align-items: center;
+        padding-top: 22px
+    }
+
+    .site-header nav.left ul {
+        padding-top: 10px;
+        max-width: 420px
+    }
+
+    .site-header nav a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 32px;
+        transition: color .2s
+    }
+
+    .site-header nav a:hover,
+    .site-header nav a:focus-visible,
+    .site-header nav a[aria-current] {
+        color: var(--pp-mint)
+    }
+
+    .site-header .logo img {
+        width: auto;
+        height: 100px
+    }
+
+    .icon {
+        display: block;
+        width: 16px;
+        height: 16px;
+        fill: currentColor
+    }
+
+    .menu-toggle {
+        display: none
+    }
+
+    .hero h1 {
+        margin: auto auto 0;
+        padding: 0 0 70px;
+        max-width: 1100px;
+        font-size: 50px;
+        line-height: 1.2;
+        font-weight: 500;
+        text-align: center;
+        color: #fff
+    }
+
+    /* ---------- Sections ---------- */
+    .section {
+        padding: 80px 30px
+    }
+
+    .inner {
+        max-width: 1200px;
+        margin: 0 auto
+    }
+
+    .intro {
+        background: var(--pp-neutral);
+        text-align: center;
+        padding: 40px 30px 60px
+    }
+
+    .intro p {
+        max-width: 640px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--pp-green)
+    }
+
+    .content {
+        background: #fff
+    }
+
+    .content .inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center
+    }
+
+    .contact h2 {
+        font-size: 36px;
+        line-height: 1.2;
+        font-weight: 300;
+        color: var(--pp-green);
+        margin-bottom: 24px
+    }
+
+    .content p {
+        margin: 0 0 18px;
+        max-width: 560px
+    }
+
+    .content .photo {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover
+    }
+
+    .divider {
+        height: 3px;
+        background: radial-gradient(circle, #bababa 24%, #707070 69%)
+    }
+
+    .contact {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background:
+            linear-gradient(90deg, rgba(240, 242, 241, .9) 0%, rgba(240, 242, 241, .6) 45%, rgba(240, 242, 241, 0) 60%),
+            url("../bilder/foto-kontakt.jpg") right center / cover no-repeat var(--pp-neutral)
+    }
+
+    .contact .text {
+        max-width: 560px
+    }
+
+    .contact p {
+        margin: 0 0 24px
+    }
+
+    .contact dl {
+        margin: 48px 0 0;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        justify-content: start;
+        gap: 18px 40px
+    }
+
+    .contact dt {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--pp-mint);
+        line-height: 1.3
+    }
+
+    .contact dd {
+        margin: 0;
+        color: var(--pp-green)
+    }
+
+    .contact dd a {
+        text-decoration: none
+    }
+
+    .contact dd a:hover {
+        text-decoration: underline
+    }
+
+    /* Outline button with slanted right edge, after the site's SVG buttons (KONTAKT / TEKNOLOGI). */
+    .pp-button {
+        --edge: var(--pp-green);
+        --fill: var(--pp-white);
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        height: 50px;
+        padding: 0 44px 0 23px;
+        margin-top: 8px;
+        font-size: 15px;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--pp-green);
+        background: var(--edge);
+        clip-path: polygon(0 0, 100% 0, calc(100% - 20px) 100%, 0 100%)
+    }
+
+    .pp-button::before {
+        content: "";
+        position: absolute;
+        inset: 1px;
+        background: var(--fill);
+        clip-path: polygon(0 0, calc(100% - .5px) 0, calc(100% - 19.7px) 100%, 0 100%);
+        transition: background .2s
+    }
+
+    .pp-button span {
+        position: relative
+    }
+
+    .pp-button:hover,
+    .pp-button:focus-visible {
+        --fill: var(--pp-mint)
+    }
+
+    .pp-button:focus-visible {
+        outline: none;
+        filter: drop-shadow(0 0 2px var(--pp-green))
+    }
+
+    .contact .pp-button {
+        --fill: var(--pp-neutral)
+    }
+
+    .contact .pp-button:hover,
+    .contact .pp-button:focus-visible {
+        --fill: var(--pp-mint)
+    }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+        background: var(--pp-green);
+        color: #fff;
+        padding: 82px 83px
+    }
+
+    .site-footer .cols {
+        max-width: 1220px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px
+    }
+
+    .site-footer h3 {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--pp-mint);
+        margin: 0 0 8px
+    }
+
+    .site-footer p {
+        margin: 0 0 16px
+    }
+
+    .site-footer a {
+        color: var(--pp-neutral);
+        text-decoration: none
+    }
+
+    .site-footer a:hover {
+        color: var(--pp-mint)
+    }
+
+    .site-footer .flogo {
+        width: 160px;
+        margin: -18px 0 18px -6px
+    }
+
+    .site-footer address {
+        font-style: normal;
+        line-height: 40px
+    }
+
+    .site-footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        line-height: 30px
+    }
+
+    .site-footer .icon {
+        width: 18px;
+        height: 18px;
+        margin-top: 24px
+    }
+
+    .copyright {
+        background: #7c7c7b;
+        color: #fff;
+        text-align: center;
+        padding: 23px 16px;
+        margin: 0
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1000px) {
+        .hero {
+            padding: 20px 24px 0;
+            min-height: 480px
+        }
+
+        .site-header {
+            grid-template-columns: auto 1fr;
+            align-items: center
+        }
+
+        .site-header .logo {
+            order: -2
+        }
+
+        .site-header .menu-toggle {
+            order: -1
+        }
+
+        .site-header .logo img {
+            width: auto;
+            height: 64px
+        }
+
+        .menu-toggle {
+            display: block;
+            justify-self: end;
+            background: none;
+            border: 0;
+            padding: 8px;
+            cursor: pointer;
+            color: #fff
+        }
+
+        .menu-toggle svg {
+            display: block;
+            width: 28px;
+            height: 28px;
+            fill: currentColor
+        }
+
+        .site-header nav {
+            display: none;
+            grid-column: 1 / -1
+        }
+
+        .site-header.open nav {
+            display: block;
+            background: rgba(0, 75, 69, .95);
+            padding: 8px 20px
+        }
+
+        .site-header.open nav.left {
+            margin-top: 12px;
+            padding-bottom: 0
+        }
+
+        .site-header.open nav.right {
+            padding-top: 0
+        }
+
+        .site-header nav ul,
+        .site-header nav.right ul {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0;
+            gap: 0
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            padding-bottom: 48px
+        }
+
+        .content .inner {
+            grid-template-columns: 1fr;
+            gap: 40px
+        }
+
+        .contact {
+            background:
+                linear-gradient(rgba(240, 242, 241, .88), rgba(240, 242, 241, .88)),
+                url("../bilder/foto-kontakt.jpg") 75% center / cover no-repeat var(--pp-neutral)
+        }
+
+        .contact dl {
+            grid-template-columns: 1fr
+        }
+
+        .site-footer {
+            padding: 60px 24px
+        }
+
+        .site-footer .cols {
+            grid-template-columns: 1fr 1fr
+        }
+    }
+
+    @media (max-width: 560px) {
+        .section {
+            padding: 60px 16px
+        }
+
+        .intro {
+            padding: 32px 16px 48px
+        }
+
+        .hero {
+            padding: 16px 16px 0
+        }
+
+        .hero h1 {
+            font-size: 28px
+        }
+
+        .contact h2 {
+            font-size: 28px
+        }
+
+        .site-footer .cols {
+            grid-template-columns: 1fr
+        }
+    }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+    </symbol>
+</svg>
+
+<a class="skip" href="#main">Fortsätt till innehållet</a>
+
+<div class="hero">
+    <header class="site-header">
+        <nav class="left" aria-label="Huvudmeny">
+            <ul>
+                <li><a href="https://partprecision.se/sv/om-oss/">Om oss</a></li>
+                <li><a href="https://partprecision.se/sv/affarsomraden/">Affärsområden</a></li>
+                <li><a href="https://partprecision.se/sv/skarande-bearbetning/">Skärande bearbetning</a></li>
+            </ul>
+        </nav>
+        <a class="logo" href="https://partprecision.se/sv/"><img src="../bilder/logo-symbol.png" alt="Part Precision"></a>
+        <button class="menu-toggle" aria-expanded="false" aria-label="Meny">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v2.5H3zM3 10.75h18v2.5H3zM3 16.5h18V19H3z" /></svg>
+        </button>
+        <nav class="right" aria-label="Sekundär meny">
+            <ul>
+                <li><a href="https://partprecision.se/sv/nyheter/" aria-current="page">Nyheter</a></li>
+                <li><a href="https://partprecision.se/sv/kvalitet/">Kvalitet</a></li>
+                <li><a href="https://partprecision.se/sv/kontakt/">Kontakt</a></li>
+                <li><a href="https://www.linkedin.com/company/part-precision-sweden-ab/" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin" /></svg></a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Precisionskomponenter för medicinteknik och industri</h1>
+</div>
+
+<main id="main">
+    <section class="intro">
+        <p>Från prototyp till serieproduktion – med er komponent i fokus.</p>
+    </section>
+
+    <section class="section content">
+        <div class="inner">
+            <div>
+                <p>Part Precision tillverkar komponenter utifrån kundens ritningar och specifikationer. Vi kombinerar
+                    skärande bearbetning med dokumenterade processer och nära kundsamarbete.</p>
+                <p>I vår broschyr kan ni läsa mer om våra tillverkningsmöjligheter och affärsområden inom
+                    precisionsmekanik och medicinteknik.</p>
+                <a class="pp-button" href="broschyr-digital.pdf"><span>Läs broschyren</span></a>
+            </div>
+            <img class="photo" src="../bilder/foto-produktion.jpg"
+                alt="Medarbetare vid en maskin i Part Precisions produktionsmiljö">
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section contact">
+        <div class="inner">
+            <div class="text">
+                <h2>Vill ni diskutera ert nästa projekt?</h2>
+                <p>Kontakta oss på <a href="mailto:info@partprecision.se">info@partprecision.se</a>.</p>
+                <a class="pp-button" href="https://partprecision.se/sv/kontakt/"><span>Kontakt</span></a>
+            <dl>
+                <div>
+                    <dt>Ekonomi</dt>
+                    <dd><a href="mailto:invoice@partprecision.se">invoice@partprecision.se</a></dd>
+                </div>
+                <div>
+                    <dt>Order</dt>
+                    <dd><a href="mailto:order@partprecision.se">order@partprecision.se</a></dd>
+                </div>
+                <div>
+                    <dt>Information</dt>
+                    <dd><a href="mailto:info@partprecision.se">info@partprecision.se</a></dd>
+                </div>
+            </dl>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="site-footer">
+        <div class="cols">
+            <div>
+                <img class="flogo" src="../bilder/logo-liggande.png" alt="Part Precision">
+                <address>Blombergsvägen 3,<br>542 35 Mariestad</address>
+                <a href="https://www.linkedin.com/company/part-precision-sweden-ab/" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin" /></svg></a>
+            </div>
+            <div>
+                <h3>Personal</h3>
+                <p>Är du intresserad av att bli en av oss?<br>Skicka ett mejl till<br>
+                    <a href="mailto:info@partprecision.se">info@partprecision.se</a></p>
+            </div>
+            <div>
+                <h3>Faktura</h3>
+                <p><a href="mailto:invoice@partprecision.se">invoice@partprecision.se</a></p>
+                <h3>Order</h3>
+                <p><a href="mailto:order@partprecision.se">order@partprecision.se</a></p>
+                <h3>Info</h3>
+                <p><a href="mailto:info@partprecision.se">info@partprecision.se</a></p>
+            </div>
+            <div>
+                <h3>Part Precision</h3>
+                <ul>
+                    <li><a href="https://partprecision.se/sv/">Hem</a></li>
+                    <li><a href="https://partprecision.se/sv/om-oss/">Om oss</a></li>
+                    <li><a href="https://partprecision.se/sv/affarsomraden/">Affärsområden</a></li>
+                    <li><a href="https://partprecision.se/sv/skarande-bearbetning/">Teknologi</a></li>
+                    <li><a href="https://partprecision.se/sv/kontakt/">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="copyright">© 2026 • Part Precision Sweden AB</p>
+</footer>
+
+<script>
+    const header = document.querySelector('.site-header');
+    const toggle = header.querySelector('.menu-toggle');
+    toggle.addEventListener('click', () => {
+        const open = header.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+    });
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+UTSKRIFT PÅ EGEN SKRIVARE
+
+Skriv ut broschyr-digital.pdf: fyra vanliga A4-sidor utan utfall eller skärmärken. Välj A4 och skala 100 % (”Faktisk storlek”). Kontorsskrivare lämnar en smal vit kant eftersom de inte kan skriva ut ända ut till papperskanten; det är normalt.
+
+TRYCKORIGINAL TILL TRYCKERI
+
+broschyr-tryckoriginal.pdf ska inte skrivas ut på egen skrivare – den vita kanten med skärmärken skärs bort hos tryckeriet. Filen har fyra A4-sidor (210 x 297 mm) i läsordning:
+- 3 mm utfall på alla sidor; bilder och färgfält går ut i utfallet.
+- Skärmärken utanför utfallet och en informationsrad i marginalen.
+- TrimBox (A4) och BleedBox (A4 + 3 mm) är satta i PDF-filen, så tryckeriets kontroll hittar formatet automatiskt.
+- Typsnittet Poppins är inbäddat. Text och logotyp ligger minst 10 mm innanför skärkanten.
+- Foton och logotyp är hämtade i högsta upplösning som finns på partprecision.se (omslagsfotot ca 240 dpi i tryck, kontaktfotot ca 185 dpi).
+
+Kan skrivas ut dubbelsidigt. För ett vikt häfte i A4 används A3-papper och häftesutskrift; låt tryckeriet sköta utskjutningen.
+
+Innan upplaga beställs, stäm av med tryckeriet:
+- Färgprofil: filen är i RGB. Be tryckeriet konvertera till sin CMYK-profil (t.ex. Coated FOGRA39) och ta fram ett provtryck av den gröna färgen #004B45.
+- Bildupplösning: om tryckeriet kräver 300 dpi behövs originalfotona från fotografen.
+- Logotyp: webbplatsens logotyp är en högupplöst PNG; ett vektororiginal (PDF/SVG/EPS) ger skarpast resultat.
+- Papper, upplaga och eventuell lack.
+
+DIGITAL BROSCHYR
+
+broschyr-digital.pdf (A4 utan utfall) har klickbara webb-, telefon- och e-postlänkar. Den passar som nedladdning på landningssidan, bilaga i mejl och dokumentinlägg på LinkedIn.
+
+REDIGERBAR BROSCHYR
+
+broschyr-redigerbar.docx kan ändras i Word. Typsnittet Poppins (gratis via Google Fonts) behöver vara installerat, annars byter Word typsnitt.
